@@ -44,7 +44,7 @@ The YANG data model defined in this document conforms to the Network Management 
 
 Topology collection is a critical use case for network operators because the network topology is an abstract representation of the physical nodes, links, and network interconnections. Network planning processes require that network resources are placed to meet traffic demand requirements not just in terms of bandwidth or delay, but also for failure scenarios. Network operators perform the network planning process as an offline process, which obtains information not directly from the network, but from inventory or template information. The main reason for this process was the lack of dynamic and programmatic interfaces that can allow planning tools to obtain such information.
 
-Thanks to the definition of the ietf-network model in {{!RFC8345}} this situation has changed, because network operators can use an API with dynamic topological information. On top of the work in {{!RFC8345}}, {{!RFC8346}} and {{!RFC8944}} extends the generic network and network topology data models with topology attributes that are specific to Layer 3 and Layer 2. However, there is not any model that exposes Open Shortest Path First (OSPF) information. This information is required in the IP/MPLS planning process to properly assess the required network resources to meet the traffic demands in normal and failure scenarios. 
+Thanks to the definition of the ietf-network model in {{!RFC8345}} this situation has changed, because network operators can use an API with dynamic topological information. On top of the work in {{!RFC8345}}, {{!RFC8346}} and {{!RFC8944}} extends the generic network and network topology data models with topology attributes that are specific to Layer 3 and Layer 2. However, there is not any model that exposes Open Shortest Path First (OSPF) information. This information is required in the IP/MPLS planning process to properly assess the required network resources to meet the traffic demands in normal and failure scenarios.
 
 The main objective of this model is to represent most relevant OSPF topology attributes.
 
@@ -54,7 +54,7 @@ This document explains the scope and purpose of the OSPF topology model and how 
 
 The YANG data model defined in this document conforms to the Network Management Datastore Architecture {{!RFC8342}}.
 
-## Terminology and Notations 
+## Terminology and Notations
 
 This document assumes that the reader is familiar with OSPF and the contents of {{!RFC8345}}. The document uses terms from those documents.
 
