@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-05-30T01:14:19.213607+00:00",
+  "timestamp": "2024-06-02T01:19:04.100655+00:00",
   "repo": "oscargdd/draft-ogondio-opsawg-ospf-topology",
   "labels": [
     {
@@ -50,5 +50,40 @@
     }
   ],
   "issues": [],
-  "pulls": []
+  "pulls": [
+    {
+      "number": 1,
+      "id": "PR_kwDOKkM4kc5xHFo5",
+      "title": "Create draft-ogondio-nmop-ospf-topology.md",
+      "url": "https://github.com/oscargdd/draft-ogondio-opsawg-ospf-topology/pull/1",
+      "state": "OPEN",
+      "author": "vlopezalvarez",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Create version for nmop working group",
+      "createdAt": "2024-05-31T10:47:18Z",
+      "updatedAt": "2024-05-31T10:50:40Z",
+      "baseRepository": "oscargdd/draft-ogondio-opsawg-ospf-topology",
+      "baseRefName": "main",
+      "baseRefOid": "196d9e952f71fda8b3f12bbe314071fd981f1358",
+      "headRepository": "oscargdd/draft-ogondio-opsawg-ospf-topology",
+      "headRefName": "nmop",
+      "headRefOid": "8fc794efb0c6fe150adddf353921b8e463b8273a",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "sbarguil",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Eliminamos el otro archivo? ",
+          "createdAt": "2024-05-31T10:50:39Z",
+          "updatedAt": "2024-05-31T10:50:39Z"
+        }
+      ],
+      "reviews": []
+    }
+  ]
 }
