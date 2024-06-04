@@ -13,7 +13,7 @@
        The YANG data model defined in this document conforms to the Network Management Datastore Architecture (NMDA). 
     " name="description">
 <meta content="xml2rfc 3.21.0" name="generator">
-<meta content="draft-ogondio-opsawg-ospf-topology-latest" name="ietf.draft">
+<meta content="draft-ogondio-nmop-ospf-topology-latest" name="ietf.draft">
 <!-- Generator version information:
   xml2rfc 3.21.0
     Python 3.11.9
@@ -30,7 +30,7 @@
     six 1.16.0
     wcwidth 0.2.13
 -->
-<link href="draft-ogondio-opsawg-ospf-topology.xml" rel="alternate" type="application/rfc+xml">
+<link href="draft-ogondio-nmop-ospf-topology.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
 <style type="text/css">@font-face {
   font-family: 'Lora';
@@ -1039,9 +1039,9 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <div id="internal-metadata" class="document-information">
 <dl id="identifiers">
 <dt class="label-workgroup">Workgroup:</dt>
-<dd class="workgroup">opsawg</dd>
+<dd class="workgroup">nmop</dd>
 <dt class="label-internet-draft">Internet-Draft:</dt>
-<dd class="internet-draft">draft-ogondio-opsawg-ospf-topology-latest</dd>
+<dd class="internet-draft">draft-ogondio-nmop-ospf-topology-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
 <time datetime="2024-06-04" class="published">4 June 2024</time>
@@ -1139,31 +1139,53 @@ svg :is([fill="white"], [fill^="#fff"]) {
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2">
-            <p id="section-toc.1-1.2.1"><a href="#section-2" class="auto internal xref">2</a>.  <a href="#name-yang-data-model-for-ospf-to" class="internal xref">YANG Data Model for OSPF Topology</a></p>
+            <p id="section-toc.1-1.2.1"><a href="#section-2" class="auto internal xref">2</a>.  <a href="#name-use-cases" class="internal xref">Use Cases</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2.2.1">
+                <p id="section-toc.1-1.2.2.1.1"><a href="#section-2.1" class="auto internal xref">2.1</a>.  <a href="#name-relationship-with-the-ospf-" class="internal xref">Relationship with the OSPF YANG Model</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2.2.2">
+                <p id="section-toc.1-1.2.2.2.1"><a href="#section-2.2" class="auto internal xref">2.2</a>.  <a href="#name-relationship-with-digital-m" class="internal xref">Relationship with Digital Map</a></p>
+</li>
+            </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3">
-            <p id="section-toc.1-1.3.1"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-ospf-topology-tree-diagram" class="internal xref">OSPF Topology Tree Diagram</a></p>
+            <p id="section-toc.1-1.3.1"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-yang-data-model-for-ospf-to" class="internal xref">YANG Data Model for OSPF Topology</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4">
-            <p id="section-toc.1-1.4.1"><a href="#section-4" class="auto internal xref">4</a>.  <a href="#name-yang-model-for-ospf-topolog" class="internal xref">YANG Model for OSPF topology</a></p>
+            <p id="section-toc.1-1.4.1"><a href="#section-4" class="auto internal xref">4</a>.  <a href="#name-rfc8345-limitations-for-the" class="internal xref">RFC8345 Limitations for the OSPF Modeling</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5">
-            <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
+            <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-ospf-topology-tree-diagram" class="internal xref">OSPF Topology Tree Diagram</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6">
-            <p id="section-toc.1-1.6.1"><a href="#section-6" class="auto internal xref">6</a>.  <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
+            <p id="section-toc.1-1.6.1"><a href="#section-6" class="auto internal xref">6</a>.  <a href="#name-yang-model-for-ospf-topolog" class="internal xref">YANG Model for OSPF topology</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7">
-            <p id="section-toc.1-1.7.1"><a href="#section-7" class="auto internal xref">7</a>.  <a href="#name-implementation-status" class="internal xref">Implementation Status</a></p>
+            <p id="section-toc.1-1.7.1"><a href="#section-7" class="auto internal xref">7</a>.  <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8">
-            <p id="section-toc.1-1.8.1"><a href="#section-8" class="auto internal xref">8</a>.  <a href="#name-normative-references" class="internal xref">Normative References</a></p>
+            <p id="section-toc.1-1.8.1"><a href="#section-8" class="auto internal xref">8</a>.  <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9">
-            <p id="section-toc.1-1.9.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
+            <p id="section-toc.1-1.9.1"><a href="#section-9" class="auto internal xref">9</a>.  <a href="#name-implementation-status" class="internal xref">Implementation Status</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10">
-            <p id="section-toc.1-1.10.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
+            <p id="section-toc.1-1.10.1"><a href="#section-10" class="auto internal xref">10</a>. <a href="#name-references" class="internal xref">References</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10.2.1">
+                <p id="section-toc.1-1.10.2.1.1"><a href="#section-10.1" class="auto internal xref">10.1</a>.  <a href="#name-normative-references" class="internal xref">Normative References</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10.2.2">
+                <p id="section-toc.1-1.10.2.2.1"><a href="#section-10.2" class="auto internal xref">10.2</a>.  <a href="#name-informative-references" class="internal xref">Informative References</a></p>
+</li>
+            </ul>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.11">
+            <p id="section-toc.1-1.11.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.12">
+            <p id="section-toc.1-1.12.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
 </li>
         </ul>
 </nav>
@@ -1174,12 +1196,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
       <h2 id="name-introduction">
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
-<p id="section-1-1">Topology collection is a critical use case for network operators because the network topology is an abstract representation of the physical nodes, links, and network interconnections. Network planning processes require that network resources are placed to meet traffic demand requirements not just in terms of bandwidth or delay, but also for failure scenarios. Network operators perform the network planning process as an offline process, which obtains information not directly from the network, but from inventory or template information. The main reason for this process was the lack of dynamic and programmatic interfaces that can allow planning tools to obtain such information.<a href="#section-1-1" class="pilcrow">¶</a></p>
-<p id="section-1-2">Thanks to the definition of the ietf-network model in <span>[<a href="#RFC8345" class="cite xref">RFC8345</a>]</span> this situation has changed, because network operators can use an API with dynamic topological information. On top of the work in <span>[<a href="#RFC8345" class="cite xref">RFC8345</a>]</span>, <span>[<a href="#RFC8346" class="cite xref">RFC8346</a>]</span> and <span>[<a href="#RFC8944" class="cite xref">RFC8944</a>]</span> extends the generic network and network topology data models with topology attributes that are specific to Layer 3 and Layer 2. However, there is not any model that exposes Open Shortest Path First (OSPF) information. This information is required in the IP/MPLS planning process to properly assess the required network resources to meet the traffic demands in normal and failure scenarios.<a href="#section-1-2" class="pilcrow">¶</a></p>
-<p id="section-1-3">The main objective of this model is to represent most relevant OSPF topology attributes.<a href="#section-1-3" class="pilcrow">¶</a></p>
-<p id="section-1-4">This document defines a YANG data model for representing, managing, and controlling the OSPF topology. The data model augments ietf-network module <span>[<a href="#RFC8345" class="cite xref">RFC8345</a>]</span> by adding the OSPF information.<a href="#section-1-4" class="pilcrow">¶</a></p>
-<p id="section-1-5">This document explains the scope and purpose of the OSPF topology model and how the topology and service models fit together.<a href="#section-1-5" class="pilcrow">¶</a></p>
-<p id="section-1-6">The YANG data model defined in this document conforms to the Network Management Datastore Architecture <span>[<a href="#RFC8342" class="cite xref">RFC8342</a>]</span>.<a href="#section-1-6" class="pilcrow">¶</a></p>
+<p id="section-1-1">Network operators perform the capacity planning for their networks and run regular what-if scenarios analysis based on representations of the real network. Those what-if analysis and capacity planning processes require, among other information, a topological view (domains, nodes, links, network interconnection) of the deployed network.<a href="#section-1-1" class="pilcrow">¶</a></p>
+<p id="section-1-2">This document defines a YANG data model representing an abstracted view of a network topology containing Open Shortest Path First (OSPF). It covers the topology of IP/MPLS networks running OSPF as Interior Gateway Protocol (IGP) protocol. The proposed YANG model augments the "A YANG Data Model for Network Topologies" <span>[<a href="#RFC8345" class="cite xref">RFC8345</a>]</span> and "A YANG Data Model for Layer 3 Topologies" <span>[<a href="#RFC8346" class="cite xref">RFC8346</a>]</span> by adding OSPF concepts. It is worth to highlight that the Yang model can also be used together with <span>[<a href="#RFC8795" class="cite xref">RFC8795</a>]</span> and <span>[<a href="#I-D.draft-ietf-teas-yang-l3-te-topo" class="cite xref">I-D.draft-ietf-teas-yang-l3-te-topo</a>]</span> when Traffic engineering characteristics are required in the topological view.<a href="#section-1-2" class="pilcrow">¶</a></p>
+<p id="section-1-3">This YANG data model can be used to export the OSPF related topology directly from a network controller to Operation Support System (OSS) tools or to a higher level controller.<a href="#section-1-3" class="pilcrow">¶</a></p>
+<p id="section-1-4">Note that the YANG model is in this document strictly adheres to the concepts (and the YANG module) in "A YANG Data Model for Network Topologies" <span>[<a href="#RFC8345" class="cite xref">RFC8345</a>]</span> and "A YANG Data Model for Layer 3 Topologies" <span>[<a href="#RFC8346" class="cite xref">RFC8346</a>]</span>. While investigating the OSFP topology, some limitations have discovered in <span>[<a href="#RFC8345" class="cite xref">RFC8345</a>]</span>, regarding how the digital map can be represented. Those limitations (and potential improvements) are covered in <span>[<a href="#I-D.draft-havel-nmop-digital-map" class="cite xref">I-D.draft-havel-nmop-digital-map</a>]</span>.<a href="#section-1-4" class="pilcrow">¶</a></p>
+<p id="section-1-5">This document explains the scope and purpose of the OSPF topology model and how the topology and service models fit together.
+The YANG data model defined in this document conforms to the Network Management Datastore Architecture <span>[<a href="#RFC8342" class="cite xref">RFC8342</a>]</span>.<a href="#section-1-5" class="pilcrow">¶</a></p>
 <div id="terminology-and-notations">
 <section id="section-1.1">
         <h3 id="name-terminology-and-notations">
@@ -1187,6 +1209,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         </h3>
 <p id="section-1.1-1">This document assumes that the reader is familiar with OSPF and the contents of <span>[<a href="#RFC8345" class="cite xref">RFC8345</a>]</span>. The document uses terms from those documents.<a href="#section-1.1-1" class="pilcrow">¶</a></p>
 <p id="section-1.1-2">The terminology for describing YANG data models is found in <span>[<a href="#RFC7950" class="cite xref">RFC7950</a>]</span>, <span>[<a href="#RFC8795" class="cite xref">RFC8795</a>]</span> and <span>[<a href="#RFC8346" class="cite xref">RFC8346</a>]</span>.<a href="#section-1.1-2" class="pilcrow">¶</a></p>
+<p id="section-1.1-3">The term Digital Twin, Digital Map, Digital Map Modelling, Digital Map Model, Digital Map Data, and Topology are specified in <span>[<a href="#I-D.draft-havel-nmop-digital-map" class="cite xref">I-D.draft-havel-nmop-digital-map</a>]</span>.<a href="#section-1.1-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="requirements-language">
@@ -1202,7 +1225,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         <h3 id="name-tree-diagram">
 <a href="#section-1.3" class="section-number selfRef">1.3. </a><a href="#name-tree-diagram" class="section-name selfRef">Tree Diagram</a>
         </h3>
-<p id="section-1.3-1">Authors include a simplified graphical representation of the data model is used in <a href="#ietf-l3-ospf-topology-tree" class="auto internal xref">Section 3</a> of this document.
+<p id="section-1.3-1">Authors include a simplified graphical representation of the data model specified in  <a href="#ietf-l3-ospf-topology-tree" class="auto internal xref">Section 4</a> of this document.
 The meaning of the symbols in these diagrams is defined in <span>[<a href="#RFC8340" class="cite xref">RFC8340</a>]</span>.<a href="#section-1.3-1" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1248,50 +1271,136 @@ Please remove this note.<a href="#section-1.4-3" class="pilcrow">¶</a></p>
 </div>
 </section>
 </div>
-<div id="yang-data-model-for-ospf-topology">
+<div id="use-cases">
 <section id="section-2">
-      <h2 id="name-yang-data-model-for-ospf-to">
-<a href="#section-2" class="section-number selfRef">2. </a><a href="#name-yang-data-model-for-ospf-to" class="section-name selfRef">YANG Data Model for OSPF Topology</a>
+      <h2 id="name-use-cases">
+<a href="#section-2" class="section-number selfRef">2. </a><a href="#name-use-cases" class="section-name selfRef">Use Cases</a>
       </h2>
-<p id="section-2-1">The abstract (base) network data model is defined in the "ietf-network" module of <span>[<a href="#RFC8345" class="cite xref">RFC8345</a>]</span>. The OSPF-topology builds on the network data model defined in the "ietf-network" module <span>[<a href="#RFC8345" class="cite xref">RFC8345</a>]</span>, augmenting the nodes with OSPF information, which anchor the links and are contained in nodes.<a href="#section-2-1" class="pilcrow">¶</a></p>
-<p id="section-2-2">There is a set of parameters and augmentations that are included at the node level. Each parameter and description are detailed following:<a href="#section-2-2" class="pilcrow">¶</a></p>
+<p id="section-2-1">Use cases for this document are the same than explained in <span>[<a href="#I-D.draft-ogondio-nmop-isis-topology" class="cite xref">I-D.draft-ogondio-nmop-isis-topology</a>]</span>. Here are included for completeness and discussion. Future versions may consider removing them.<a href="#section-2-1" class="pilcrow">¶</a></p>
+<p id="section-2-2">This information is required in the IP/MPLS planning process to properly assess the required network resources to meet the traffic demands in normal and failure scenarios. Network operators perform the capacity planning for their networks and run regular what-if scenarios analysis based on representations of the real network. Those what-if analysis and capacity planning processes require, among other information, a topological view (domains, nodes, links, network interconnection) of the deployed network.<a href="#section-2-2" class="pilcrow">¶</a></p>
+<p id="section-2-3">The standardization of an abstracted view of the OSPF topology model as NorthBound Interface (NBI) of Software Defined Networking (SDN) controllers allows the unified query of the OSFP topology in order to inject this information into third party tools covering specialized cases.<a href="#section-2-3" class="pilcrow">¶</a></p>
+<p id="section-2-4">The OSFP topological model should export enough OSFP information to permit these tools to simulate the IP routing. By mapping the traffic demand, ideally at the IP flow level, to the topology, we can simulate the traffic growth, evaluating this way its effect on the routing and quality of service. That is, simulating how IP-level traffic demands would be forwarded, after OSPF convergence is reached, and from there estimating, using appropriate mathematical models, related KPIs like the occupation in the links or end-to-end latencies.<a href="#section-2-4" class="pilcrow">¶</a></p>
+<p id="section-2-5">In summary, the network-wide view of the OSFP topology enables multiple use cases:<a href="#section-2-5" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-2-3.1">
-          <p id="section-2-3.1.1">Network-types: Its presence identifies the OSPF topology type. Thus, the network type MUST be ospf-topology.<a href="#section-2-3.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-2-6.1">
+          <p id="section-2-6.1.1">Network design: verifying that the actual deployed OSFP network conforms to the planned design.<a href="#section-2-6.1.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-2-3.2">
-          <p id="section-2-3.2.1">OSPF timer attributes: Identifies the node timer attributes configured in the network element. They are wait timer, rapid delay, slow delay, and the timer type (linear or exponential back-off).<a href="#section-2-3.2.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="section-2-6.2">
+          <p id="section-2-6.2.1">Capacity planning. Dimensioning or redesign of the IP infrastructure to satisfy target KPI metrics under existing or forecasted traffic demands.<a href="#section-2-6.2.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-2-3.3">
-          <p id="section-2-3.3.1">OSPF status: contains the neighbours' information.<a href="#section-2-3.3.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="section-2-6.3">
+          <p id="section-2-6.3.1">What-if analysis. Estimation of the network KPIs in modified network situations. For instance, failure situations, traffic anomaly situations, addition or deletion of new adjacencies, IGP weight reconfigurations, etc.<a href="#section-2-6.3.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-2-6.4">
+          <p id="section-2-6.4.1">Failure analysis. Systematic and massive test of the network under multiple simulated failure situations, evaluating the network fault tolerance properties, and using mathematical models to derive statistical network availability metrics.<a href="#section-2-6.4.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<p id="section-2-4">A second set of parameters, along with augmentations, is included at the link and termination point level. Each parameter is listed as follows:<a href="#section-2-4" class="pilcrow">¶</a></p>
+<div id="relationship-with-the-ospf-yang-model">
+<section id="section-2.1">
+        <h3 id="name-relationship-with-the-ospf-">
+<a href="#section-2.1" class="section-number selfRef">2.1. </a><a href="#name-relationship-with-the-ospf-" class="section-name selfRef">Relationship with the OSPF YANG Model</a>
+        </h3>
+<p id="section-2.1-1"><span>[<a href="#RFC9129" class="cite xref">RFC9129</a>]</span> specifies a YANG data model that can be used to configure and manage the OSPF protocol on network elements. This data model covers the configuration of an OSPF routing protocol instance, as well as the retrieval of OSPF operational states.
+<span>[<a href="#RFC9129" class="cite xref">RFC9129</a>]</span> is still expected to be used for individual network elements configuration and monitoring. On the other hand, the proposed YANG model in this document covers the abstracted view of the entire network topology containing OSPF. As such, this model is aimed at being available via the NBI of an SDN controller.<a href="#section-2.1-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="relationship-with-digital-map">
+<section id="section-2.2">
+        <h3 id="name-relationship-with-digital-m">
+<a href="#section-2.2" class="section-number selfRef">2.2. </a><a href="#name-relationship-with-digital-m" class="section-name selfRef">Relationship with Digital Map</a>
+        </h3>
+<p id="section-2.2-1">As described in <span>[<a href="#I-D.draft-havel-nmop-digital-map" class="cite xref">I-D.draft-havel-nmop-digital-map</a>]</span>, the Digital Map provides the core multi-layer topology model and data for the digital twin and connects them to the other digital twin models and data.<a href="#section-2.2-1" class="pilcrow">¶</a></p>
+<p id="section-2.2-2">The Digital Map Modelling defines the core topological entities, their role in the network, core properties, and relationships both inside each layer and between the layers.<a href="#section-2.2-2" class="pilcrow">¶</a></p>
+<p id="section-2.2-3">The Digital Map Model is a basic topological model that is linked to other functional parts of the digital twin and connects them all: configuration, maintenance, assurance (KPIs, status, health, symptoms), Traffic Engineering (TE), different behaviors and actions,  simulation, emulation, mathematical abstractions, AI algorithms, etc.<a href="#section-2.2-3" class="pilcrow">¶</a></p>
+<p id="section-2.2-4">As such the IGP topology of the Digital Map (in this case, OSPF) is just one of the layers of the Digital Map, for specific user (the network operator in charge of the IGP) for specific IGP use cases as described before.<a href="#section-2.2-4" class="pilcrow">¶</a></p>
+</section>
+</div>
+</section>
+</div>
+<div id="yang-data-model-for-ospf-topology">
+<section id="section-3">
+      <h2 id="name-yang-data-model-for-ospf-to">
+<a href="#section-3" class="section-number selfRef">3. </a><a href="#name-yang-data-model-for-ospf-to" class="section-name selfRef">YANG Data Model for OSPF Topology</a>
+      </h2>
+<p id="section-3-1">The abstract (base) network data model is defined in the "ietf-network" module of <span>[<a href="#RFC8345" class="cite xref">RFC8345</a>]</span>. The OSPF-topology builds on the network data model defined in the "ietf-network" module <span>[<a href="#RFC8345" class="cite xref">RFC8345</a>]</span>, augmenting the nodes with OSPF information, which anchor the links and are contained in nodes.<a href="#section-3-1" class="pilcrow">¶</a></p>
+<p id="section-3-2">There is a set of parameters and augmentations that are included at the node level. Each parameter and description are detailed following:<a href="#section-3-2" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-2-5.1">
-          <p id="section-2-5.1.1">Interface-type<a href="#section-2-5.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-3-3.1">
+          <p id="section-3-3.1.1">Network-types: Its presence identifies the OSPF topology type. Thus, the network type MUST be ospf-topology.<a href="#section-3-3.1.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-2-5.2">
-          <p id="section-2-5.2.1">Area ID<a href="#section-2-5.2.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="section-3-3.2">
+          <p id="section-3-3.2.1">OSPF timer attributes: Identifies the node timer attributes configured in the network element. They are wait timer, rapid delay, slow delay, and the timer type (linear or exponential back-off).<a href="#section-3-3.2.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-2-5.3">
-          <p id="section-2-5.3.1">Metric<a href="#section-2-5.3.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="section-3-3.3">
+          <p id="section-3-3.3.1">OSPF status: contains the neighbours' information.<a href="#section-3-3.3.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-2-5.4">
-          <p id="section-2-5.4.1">Passive mode<a href="#section-2-5.4.1" class="pilcrow">¶</a></p>
+      </ul>
+<p id="section-3-4">The following figure is based on the Figure 1 from <span>[<a href="#RFC8346" class="cite xref">RFC8346</a>]</span>, where the example-ospf-topology is replaced with ietf-l3-ospf-topology and where
+arrows show how the modules augment each other.<a href="#section-3-4" class="pilcrow">¶</a></p>
+<span id="name-ospf-topology-module-struct"></span><div id="fig-ietf-l3-ospf-topology-module-structure">
+<figure id="figure-1">
+        <div class="alignLeft art-text artwork" id="section-3-5.1">
+<pre>
+                      +-----------------------------+
+                      |  +-----------------------+  |
+                      |  |      ietf-network     |  |
+                      |  +----------^------------+  |
+                      |             |               |
+                      |  +-----------------------+  |
+                      |  | ietf-network-topology |  |
+                      |  +----------+------------+  |
+                      +-------------^---------------+
+                                    |
+                                    |
+                       +------------^-------------+
+                       | ietf-l3-unicast-topology |
+                       +------------^-------------+
+                                    |
+                                    |
+                        +-----------^-----------+
+                        | ietf-l3-ospf-topology |
+                        +-----------------------+
+</pre>
+</div>
+<figcaption><a href="#figure-1" class="selfRef">Figure 1</a>:
+<a href="#name-ospf-topology-module-struct" class="selfRef">OSPF Topology module structure</a>
+        </figcaption></figure>
+</div>
+<p id="section-3-6">A second set of parameters, along with augmentations, is included at the link and termination point level. Each parameter is listed as follows:<a href="#section-3-6" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-3-7.1">
+          <p id="section-3-7.1.1">Interface-type<a href="#section-3-7.1.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-3-7.2">
+          <p id="section-3-7.2.1">Area ID<a href="#section-3-7.2.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-3-7.3">
+          <p id="section-3-7.3.1">Metric<a href="#section-3-7.3.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-3-7.4">
+          <p id="section-3-7.4.1">Passive mode<a href="#section-3-7.4.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
 </section>
 </div>
 <div id="ietf-l3-ospf-topology-tree">
-<section id="section-3">
-      <h2 id="name-ospf-topology-tree-diagram">
-<a href="#section-3" class="section-number selfRef">3. </a><a href="#name-ospf-topology-tree-diagram" class="section-name selfRef">OSPF Topology Tree Diagram</a>
+<section id="section-4">
+      <h2 id="name-rfc8345-limitations-for-the">
+<a href="#section-4" class="section-number selfRef">4. </a><a href="#name-rfc8345-limitations-for-the" class="section-name selfRef">RFC8345 Limitations for the OSPF Modeling</a>
       </h2>
-<p id="section-3-1"><a href="#fig-ietf-l3-ospf-topology-tree" class="auto internal xref">Figure 1</a> below shows the tree diagram of the YANG data model defined in module ietf-l3-ospf-topology.yang (<a href="#ietf-l3-ospf-topology-yang" class="auto internal xref">Section 4</a>).<a href="#section-3-1" class="pilcrow">¶</a></p>
+<p id="section-4-1">There are some limitations in the <span>[<a href="#RFC8345" class="cite xref">RFC8345</a>]</span> that are explained in more detail in <span>[<a href="#I-D.draft-havel-nmop-digital-map" class="cite xref">I-D.draft-havel-nmop-digital-map</a>]</span>.
+The current version of the ietf-l3-ospf-topology module is based on the current version of <span>[<a href="#RFC8345" class="cite xref">RFC8345</a>]</span>.<a href="#section-4-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="ospf-topology-tree-diagram">
+<section id="section-5">
+      <h2 id="name-ospf-topology-tree-diagram">
+<a href="#section-5" class="section-number selfRef">5. </a><a href="#name-ospf-topology-tree-diagram" class="section-name selfRef">OSPF Topology Tree Diagram</a>
+      </h2>
+<p id="section-5-1"><a href="#fig-ietf-l3-ospf-topology-tree" class="auto internal xref">Figure 2</a> below shows the tree diagram of the YANG data model defined in module ietf-l3-ospf-topology.yang (<a href="#ietf-l3-ospf-topology-yang" class="auto internal xref">Section 6</a>).<a href="#section-5-1" class="pilcrow">¶</a></p>
 <span id="name-ospf-topology-tree-diagram-2"></span><div id="fig-ietf-l3-ospf-topology-tree">
-<figure id="figure-1">
-        <div class="alignLeft art-text artwork" id="section-3-2.1">
+<figure id="figure-2">
+        <div class="alignLeft art-text artwork" id="section-5-2.1">
 <pre>
 module: ietf-l3-ospf-topology
   augment /nw:networks/nw:network/nw:network-types:
@@ -1319,22 +1428,22 @@ module: ietf-l3-ospf-topology
        +--rw is-passive?       boolean
 </pre>
 </div>
-<figcaption><a href="#figure-1" class="selfRef">Figure 1</a>:
+<figcaption><a href="#figure-2" class="selfRef">Figure 2</a>:
 <a href="#name-ospf-topology-tree-diagram-2" class="selfRef">OSPF Topology tree diagram</a>
         </figcaption></figure>
 </div>
 </section>
 </div>
 <div id="ietf-l3-ospf-topology-yang">
-<section id="section-4">
+<section id="section-6">
       <h2 id="name-yang-model-for-ospf-topolog">
-<a href="#section-4" class="section-number selfRef">4. </a><a href="#name-yang-model-for-ospf-topolog" class="section-name selfRef">YANG Model for OSPF topology</a>
+<a href="#section-6" class="section-number selfRef">6. </a><a href="#name-yang-model-for-ospf-topolog" class="section-name selfRef">YANG Model for OSPF topology</a>
       </h2>
-<p id="section-4-1">Following the YANG model is presented.<a href="#section-4-1" class="pilcrow">¶</a></p>
+<p id="section-6-1">Following the YANG model is presented.<a href="#section-6-1" class="pilcrow">¶</a></p>
 <span id="name-ospf-topology-yang-module"></span><div id="fig-ietf-ospf-topolopy-yang">
-<figure id="figure-2">
-        <div class="breakable sourcecode" id="section-4-2.1">
-<pre>&lt;CODE BEGINS&gt; file "ietf-l3-ospf-topology@2023-10-23.yang"
+<figure id="figure-3">
+        <div class="breakable sourcecode" id="section-6-2.1">
+<pre>&lt;CODE BEGINS&gt; file "ietf-l3-ospf-topology@2024-06-12.yang"
 
 
 module ietf-l3-ospf-topology {
@@ -1356,7 +1465,7 @@ module ietf-l3-ospf-topology {
   }
 
   organization
-    "IETF OPSA (Operations and Management Area) Working Group";
+    "IETF NMOP (Network Management Operations) Working Group";
   contact
     "WG Web:  &lt;https://datatracker.ietf.org/wg/opsawg/&gt;
     WG List:  &lt;mailto:opsawg@ietf.org&gt;
@@ -1371,7 +1480,7 @@ module ietf-l3-ospf-topology {
     "This module defines a model for Layer 3 OSPF
      topologies.
 
-     Copyright (c) 2022 IETF Trust and the persons identified as
+     Copyright (c) 2024 IETF Trust and the persons identified as
      authors of the code.  All rights reserved.
 
      Redistribution and use in source and binary forms, with or
@@ -1588,39 +1697,39 @@ module ietf-l3-ospf-topology {
 
 &lt;CODE ENDS&gt;</pre>
 </div>
-<figcaption><a href="#figure-2" class="selfRef">Figure 2</a>:
+<figcaption><a href="#figure-3" class="selfRef">Figure 3</a>:
 <a href="#name-ospf-topology-yang-module" class="selfRef">OSPF Topology YANG module</a>
         </figcaption></figure>
 </div>
 </section>
 </div>
 <div id="security-considerations">
-<section id="section-5">
+<section id="section-7">
       <h2 id="name-security-considerations">
-<a href="#section-5" class="section-number selfRef">5. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
+<a href="#section-7" class="section-number selfRef">7. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
       </h2>
-<p id="section-5-1">The YANG module specified in this document defines a schema for data that is designed to be accessed via network management protocols such as NETCONF {!RFC6241}} or RESTCONF <span>[<a href="#RFC8040" class="cite xref">RFC8040</a>]</span>. The lowest NETCONF layer is the secure transport layer, and the mandatory-to-implement secure transport is Secure Shell (SSH) <span>[<a href="#RFC6242" class="cite xref">RFC6242</a>]</span>. The lowest RESTCONF layer is HTTPS, and the mandatory-to-implement secure transport is TLS <span>[<a href="#RFC8446" class="cite xref">RFC8446</a>]</span>.<a href="#section-5-1" class="pilcrow">¶</a></p>
-<p id="section-5-2">The Network Configuration Access Control Model (NACM) <span>[<a href="#RFC8341" class="cite xref">RFC8341</a>]</span> provides the means to restrict access for particular NETCONF or RESTCONF users to a preconfigured subset of all available NETCONF or RESTCONF protocol operations and content.<a href="#section-5-2" class="pilcrow">¶</a></p>
-<p id="section-5-3">There are a number of data nodes defined in this YANG module that are writable/creatable/deletable (i.e., config true, which is the default). These data nodes may be considered sensitive or vulnerable in some network environments. Write operations (e.g., edit-config) to these data nodes without proper protection can have a negative effect on network operations.<a href="#section-5-3" class="pilcrow">¶</a></p>
+<p id="section-7-1">The YANG module specified in this document defines a schema for data that is designed to be accessed via network management protocols such as NETCONF {!RFC6241}} or RESTCONF <span>[<a href="#RFC8040" class="cite xref">RFC8040</a>]</span>. The lowest NETCONF layer is the secure transport layer, and the mandatory-to-implement secure transport is Secure Shell (SSH) <span>[<a href="#RFC6242" class="cite xref">RFC6242</a>]</span>. The lowest RESTCONF layer is HTTPS, and the mandatory-to-implement secure transport is TLS <span>[<a href="#RFC8446" class="cite xref">RFC8446</a>]</span>.<a href="#section-7-1" class="pilcrow">¶</a></p>
+<p id="section-7-2">The Network Configuration Access Control Model (NACM) <span>[<a href="#RFC8341" class="cite xref">RFC8341</a>]</span> provides the means to restrict access for particular NETCONF or RESTCONF users to a preconfigured subset of all available NETCONF or RESTCONF protocol operations and content.<a href="#section-7-2" class="pilcrow">¶</a></p>
+<p id="section-7-3">There are a number of data nodes defined in this YANG module that are writable/creatable/deletable (i.e., config true, which is the default). These data nodes may be considered sensitive or vulnerable in some network environments. Write operations (e.g., edit-config) to these data nodes without proper protection can have a negative effect on network operations.<a href="#section-7-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="iana-considerations">
-<section id="section-6">
+<section id="section-8">
       <h2 id="name-iana-considerations">
-<a href="#section-6" class="section-number selfRef">6. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
+<a href="#section-8" class="section-number selfRef">8. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
       </h2>
-<p id="section-6-1">This document registers the following namespace URIs in the IETF XML registry <span>[<a href="#RFC3688" class="cite xref">RFC3688</a>]</span>:<a href="#section-6-1" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="section-6-2">
+<p id="section-8-1">This document registers the following namespace URIs in the IETF XML registry <span>[<a href="#RFC3688" class="cite xref">RFC3688</a>]</span>:<a href="#section-8-1" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-8-2">
 <pre>
 --------------------------------------------------------------------
 URI: urn:ietf:params:xml:ns:yang:ietf-l3-ospf-topology
 Registrant Contact: The IESG.
 XML: N/A, the requested URI is an XML namespace.
 --------------------------------------------------------------------
-</pre><a href="#section-6-2" class="pilcrow">¶</a>
+</pre><a href="#section-8-2" class="pilcrow">¶</a>
 </div>
-<p id="section-6-3">This document registers the following YANG module in the YANG Module Names registry <span>[<a href="#RFC6020" class="cite xref">RFC6020</a>]</span>:<a href="#section-6-3" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="section-6-4">
+<p id="section-8-3">This document registers the following YANG module in the YANG Module Names registry <span>[<a href="#RFC6020" class="cite xref">RFC6020</a>]</span>:<a href="#section-8-3" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-8-4">
 <pre>
 --------------------------------------------------------------------
 name:         ietf-l3-ospf-topology
@@ -1629,91 +1738,117 @@ maintained by IANA: N
 prefix:       ietf-l3-ospf-topology
 reference:    RFC XXXX
 --------------------------------------------------------------------
-</pre><a href="#section-6-4" class="pilcrow">¶</a>
+</pre><a href="#section-8-4" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
 <div id="implementation-status">
-<section id="section-7">
+<section id="section-9">
       <h2 id="name-implementation-status">
-<a href="#section-7" class="section-number selfRef">7. </a><a href="#name-implementation-status" class="section-name selfRef">Implementation Status</a>
+<a href="#section-9" class="section-number selfRef">9. </a><a href="#name-implementation-status" class="section-name selfRef">Implementation Status</a>
       </h2>
-<p id="section-7-1">This section will be used to track the status of the implementations of the model. It is aimed at being removed if the document becomes RFC.<a href="#section-7-1" class="pilcrow">¶</a></p>
+<p id="section-9-1">This section will be used to track the status of the implementations of the model. It is aimed at being removed if the document becomes RFC.<a href="#section-9-1" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="sec-normative-references">
-<section id="section-8">
-      <h2 id="name-normative-references">
-<a href="#section-8" class="section-number selfRef">8. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
+<section id="section-10">
+      <h2 id="name-references">
+<a href="#section-10" class="section-number selfRef">10. </a><a href="#name-references" class="section-name selfRef">References</a>
       </h2>
+<div id="sec-normative-references">
+<section id="section-10.1">
+        <h3 id="name-normative-references">
+<a href="#section-10.1" class="section-number selfRef">10.1. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
+        </h3>
 <dl class="references">
+<dt id="I-D.draft-havel-nmop-digital-map">[I-D.draft-havel-nmop-digital-map]</dt>
+        <dd>
+<span class="refAuthor">Havel, O.</span>, <span class="refAuthor">Claise, B.</span>, <span class="refAuthor">de Dios, O. G.</span>, <span class="refAuthor">Elhassany, A.</span>, <span class="refAuthor">Graf, T.</span>, and <span class="refAuthor">M. Boucadair</span>, <span class="refTitle">"Modeling the Digital Map based on RFC 8345: Sharing Experience and Perspectives"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-havel-nmop-digital-map-00</span>, <time datetime="2024-03-03" class="refDate">3 March 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-havel-nmop-digital-map-00">https://datatracker.ietf.org/doc/html/draft-havel-nmop-digital-map-00</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="RFC2119">[RFC2119]</dt>
-      <dd>
+        <dd>
 <span class="refAuthor">Bradner, S.</span>, <span class="refTitle">"Key words for use in RFCs to Indicate Requirement Levels"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 2119</span>, <span class="seriesInfo">DOI 10.17487/RFC2119</span>, <time datetime="1997-03" class="refDate">March 1997</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC3688">[RFC3688]</dt>
-      <dd>
+        <dd>
 <span class="refAuthor">Mealling, M.</span>, <span class="refTitle">"The IETF XML Registry"</span>, <span class="seriesInfo">BCP 81</span>, <span class="seriesInfo">RFC 3688</span>, <span class="seriesInfo">DOI 10.17487/RFC3688</span>, <time datetime="2004-01" class="refDate">January 2004</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc3688">https://www.rfc-editor.org/rfc/rfc3688</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC6020">[RFC6020]</dt>
-      <dd>
+        <dd>
 <span class="refAuthor">Bjorklund, M., Ed.</span>, <span class="refTitle">"YANG - A Data Modeling Language for the Network Configuration Protocol (NETCONF)"</span>, <span class="seriesInfo">RFC 6020</span>, <span class="seriesInfo">DOI 10.17487/RFC6020</span>, <time datetime="2010-10" class="refDate">October 2010</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc6020">https://www.rfc-editor.org/rfc/rfc6020</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC6242">[RFC6242]</dt>
-      <dd>
+        <dd>
 <span class="refAuthor">Wasserman, M.</span>, <span class="refTitle">"Using the NETCONF Protocol over Secure Shell (SSH)"</span>, <span class="seriesInfo">RFC 6242</span>, <span class="seriesInfo">DOI 10.17487/RFC6242</span>, <time datetime="2011-06" class="refDate">June 2011</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc6242">https://www.rfc-editor.org/rfc/rfc6242</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC6991">[RFC6991]</dt>
-      <dd>
+        <dd>
 <span class="refAuthor">Schoenwaelder, J., Ed.</span>, <span class="refTitle">"Common YANG Data Types"</span>, <span class="seriesInfo">RFC 6991</span>, <span class="seriesInfo">DOI 10.17487/RFC6991</span>, <time datetime="2013-07" class="refDate">July 2013</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc6991">https://www.rfc-editor.org/rfc/rfc6991</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC7950">[RFC7950]</dt>
-      <dd>
+        <dd>
 <span class="refAuthor">Bjorklund, M., Ed.</span>, <span class="refTitle">"The YANG 1.1 Data Modeling Language"</span>, <span class="seriesInfo">RFC 7950</span>, <span class="seriesInfo">DOI 10.17487/RFC7950</span>, <time datetime="2016-08" class="refDate">August 2016</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7950">https://www.rfc-editor.org/rfc/rfc7950</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC8040">[RFC8040]</dt>
-      <dd>
+        <dd>
 <span class="refAuthor">Bierman, A.</span>, <span class="refAuthor">Bjorklund, M.</span>, and <span class="refAuthor">K. Watsen</span>, <span class="refTitle">"RESTCONF Protocol"</span>, <span class="seriesInfo">RFC 8040</span>, <span class="seriesInfo">DOI 10.17487/RFC8040</span>, <time datetime="2017-01" class="refDate">January 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8040">https://www.rfc-editor.org/rfc/rfc8040</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC8174">[RFC8174]</dt>
-      <dd>
+        <dd>
 <span class="refAuthor">Leiba, B.</span>, <span class="refTitle">"Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 8174</span>, <span class="seriesInfo">DOI 10.17487/RFC8174</span>, <time datetime="2017-05" class="refDate">May 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8174">https://www.rfc-editor.org/rfc/rfc8174</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC8340">[RFC8340]</dt>
-      <dd>
+        <dd>
 <span class="refAuthor">Bjorklund, M.</span> and <span class="refAuthor">L. Berger, Ed.</span>, <span class="refTitle">"YANG Tree Diagrams"</span>, <span class="seriesInfo">BCP 215</span>, <span class="seriesInfo">RFC 8340</span>, <span class="seriesInfo">DOI 10.17487/RFC8340</span>, <time datetime="2018-03" class="refDate">March 2018</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8340">https://www.rfc-editor.org/rfc/rfc8340</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC8341">[RFC8341]</dt>
-      <dd>
+        <dd>
 <span class="refAuthor">Bierman, A.</span> and <span class="refAuthor">M. Bjorklund</span>, <span class="refTitle">"Network Configuration Access Control Model"</span>, <span class="seriesInfo">STD 91</span>, <span class="seriesInfo">RFC 8341</span>, <span class="seriesInfo">DOI 10.17487/RFC8341</span>, <time datetime="2018-03" class="refDate">March 2018</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8341">https://www.rfc-editor.org/rfc/rfc8341</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC8342">[RFC8342]</dt>
-      <dd>
+        <dd>
 <span class="refAuthor">Bjorklund, M.</span>, <span class="refAuthor">Schoenwaelder, J.</span>, <span class="refAuthor">Shafer, P.</span>, <span class="refAuthor">Watsen, K.</span>, and <span class="refAuthor">R. Wilton</span>, <span class="refTitle">"Network Management Datastore Architecture (NMDA)"</span>, <span class="seriesInfo">RFC 8342</span>, <span class="seriesInfo">DOI 10.17487/RFC8342</span>, <time datetime="2018-03" class="refDate">March 2018</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8342">https://www.rfc-editor.org/rfc/rfc8342</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC8345">[RFC8345]</dt>
-      <dd>
+        <dd>
 <span class="refAuthor">Clemm, A.</span>, <span class="refAuthor">Medved, J.</span>, <span class="refAuthor">Varga, R.</span>, <span class="refAuthor">Bahadur, N.</span>, <span class="refAuthor">Ananthakrishnan, H.</span>, and <span class="refAuthor">X. Liu</span>, <span class="refTitle">"A YANG Data Model for Network Topologies"</span>, <span class="seriesInfo">RFC 8345</span>, <span class="seriesInfo">DOI 10.17487/RFC8345</span>, <time datetime="2018-03" class="refDate">March 2018</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8345">https://www.rfc-editor.org/rfc/rfc8345</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC8346">[RFC8346]</dt>
-      <dd>
+        <dd>
 <span class="refAuthor">Clemm, A.</span>, <span class="refAuthor">Medved, J.</span>, <span class="refAuthor">Varga, R.</span>, <span class="refAuthor">Liu, X.</span>, <span class="refAuthor">Ananthakrishnan, H.</span>, and <span class="refAuthor">N. Bahadur</span>, <span class="refTitle">"A YANG Data Model for Layer 3 Topologies"</span>, <span class="seriesInfo">RFC 8346</span>, <span class="seriesInfo">DOI 10.17487/RFC8346</span>, <time datetime="2018-03" class="refDate">March 2018</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8346">https://www.rfc-editor.org/rfc/rfc8346</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC8446">[RFC8446]</dt>
-      <dd>
+        <dd>
 <span class="refAuthor">Rescorla, E.</span>, <span class="refTitle">"The Transport Layer Security (TLS) Protocol Version 1.3"</span>, <span class="seriesInfo">RFC 8446</span>, <span class="seriesInfo">DOI 10.17487/RFC8446</span>, <time datetime="2018-08" class="refDate">August 2018</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8446">https://www.rfc-editor.org/rfc/rfc8446</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC8795">[RFC8795]</dt>
-      <dd>
+        <dd>
 <span class="refAuthor">Liu, X.</span>, <span class="refAuthor">Bryskin, I.</span>, <span class="refAuthor">Beeram, V.</span>, <span class="refAuthor">Saad, T.</span>, <span class="refAuthor">Shah, H.</span>, and <span class="refAuthor">O. Gonzalez de Dios</span>, <span class="refTitle">"YANG Data Model for Traffic Engineering (TE) Topologies"</span>, <span class="seriesInfo">RFC 8795</span>, <span class="seriesInfo">DOI 10.17487/RFC8795</span>, <time datetime="2020-08" class="refDate">August 2020</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8795">https://www.rfc-editor.org/rfc/rfc8795</a>&gt;</span>. </dd>
 <dd class="break"></dd>
-<dt id="RFC8944">[RFC8944]</dt>
-    <dd>
-<span class="refAuthor">Dong, J.</span>, <span class="refAuthor">Wei, X.</span>, <span class="refAuthor">Wu, Q.</span>, <span class="refAuthor">Boucadair, M.</span>, and <span class="refAuthor">A. Liu</span>, <span class="refTitle">"A YANG Data Model for Layer 2 Network Topologies"</span>, <span class="seriesInfo">RFC 8944</span>, <span class="seriesInfo">DOI 10.17487/RFC8944</span>, <time datetime="2020-11" class="refDate">November 2020</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8944">https://www.rfc-editor.org/rfc/rfc8944</a>&gt;</span>. </dd>
+<dt id="RFC9129">[RFC9129]</dt>
+      <dd>
+<span class="refAuthor">Yeung, D.</span>, <span class="refAuthor">Qu, Y.</span>, <span class="refAuthor">Zhang, Z.</span>, <span class="refAuthor">Chen, I.</span>, and <span class="refAuthor">A. Lindem</span>, <span class="refTitle">"YANG Data Model for the OSPF Protocol"</span>, <span class="seriesInfo">RFC 9129</span>, <span class="seriesInfo">DOI 10.17487/RFC9129</span>, <time datetime="2022-10" class="refDate">October 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9129">https://www.rfc-editor.org/rfc/rfc9129</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
 </div>
+<div id="sec-informative-references">
+<section id="section-10.2">
+        <h3 id="name-informative-references">
+<a href="#section-10.2" class="section-number selfRef">10.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
+        </h3>
+<dl class="references">
+<dt id="I-D.draft-ietf-teas-yang-l3-te-topo">[I-D.draft-ietf-teas-yang-l3-te-topo]</dt>
+        <dd>
+<span class="refAuthor">Liu, X.</span>, <span class="refAuthor">Bryskin, I.</span>, <span class="refAuthor">Beeram, V. P.</span>, <span class="refAuthor">Saad, T.</span>, <span class="refAuthor">Shah, H. C.</span>, and <span class="refAuthor">O. G. de Dios</span>, <span class="refTitle">"YANG Data Model for Layer 3 TE Topologies"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-teas-yang-l3-te-topo-16</span>, <time datetime="2024-03-02" class="refDate">2 March 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-teas-yang-l3-te-topo-16">https://datatracker.ietf.org/doc/html/draft-ietf-teas-yang-l3-te-topo-16</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="I-D.draft-ogondio-nmop-isis-topology">[I-D.draft-ogondio-nmop-isis-topology]</dt>
+      <dd>
+<span class="refAuthor">de Dios, O. G.</span>, <span class="refAuthor">Barguil, S.</span>, <span class="refAuthor">Lopez, V.</span>, <span class="refAuthor">Ceccarelli, D.</span>, and <span class="refAuthor">B. Claise</span>, <span class="refTitle">"A YANG Data Model for Intermediate System to intermediate System (IS-IS) Topology"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ogondio-nmop-isis-topology-00</span>, <time datetime="2024-03-04" class="refDate">4 March 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ogondio-nmop-isis-topology-00">https://datatracker.ietf.org/doc/html/draft-ogondio-nmop-isis-topology-00</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+</dl>
+</section>
+</div>
+</section>
 <div id="acknowledgments">
 <section id="appendix-A">
       <h2 id="name-acknowledgments">

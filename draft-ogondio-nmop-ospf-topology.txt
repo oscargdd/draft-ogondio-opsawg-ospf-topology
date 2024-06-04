@@ -2,7 +2,7 @@
 
 
 
-opsawg                                                     O. G. D. Dios
+nmop                                                       O. G. D. Dios
 Internet-Draft                                                Telefonica
 Intended status: Standards Track                           S. B. Giraldo
 Expires: 6 December 2024                                        V. Lopez
@@ -11,7 +11,7 @@ Expires: 6 December 2024                                        V. Lopez
 
 
      A YANG Data Model for Open Shortest Path First (OSPF) Topology
-               draft-ogondio-opsawg-ospf-topology-latest
+                draft-ogondio-nmop-ospf-topology-latest
 
 Abstract
 
@@ -62,52 +62,57 @@ Table of Contents
      1.2.  Requirements Language
      1.3.  Tree Diagram
      1.4.  Prefix in Data Node Names
-   2.  YANG Data Model for OSPF Topology
-   3.  OSPF Topology Tree Diagram
-   4.  YANG Model for OSPF topology
-   5.  Security Considerations
-   6.  IANA Considerations
-   7.  Implementation Status
-   8.  Normative References
+   2.  Use Cases
+     2.1.  Relationship with the OSPF YANG Model
+     2.2.  Relationship with Digital Map
+   3.  YANG Data Model for OSPF Topology
+   4.  RFC8345 Limitations for the OSPF Modeling
+   5.  OSPF Topology Tree Diagram
+   6.  YANG Model for OSPF topology
+   7.  Security Considerations
+   8.  IANA Considerations
+   9.  Implementation Status
+   10. References
+     10.1.  Normative References
+     10.2.  Informative References
    Acknowledgments
    Authors' Addresses
 
 1.  Introduction
 
-   Topology collection is a critical use case for network operators
-   because the network topology is an abstract representation of the
-   physical nodes, links, and network interconnections.  Network
-   planning processes require that network resources are placed to meet
-   traffic demand requirements not just in terms of bandwidth or delay,
-   but also for failure scenarios.  Network operators perform the
-   network planning process as an offline process, which obtains
-   information not directly from the network, but from inventory or
-   template information.  The main reason for this process was the lack
-   of dynamic and programmatic interfaces that can allow planning tools
-   to obtain such information.
+   Network operators perform the capacity planning for their networks
+   and run regular what-if scenarios analysis based on representations
+   of the real network.  Those what-if analysis and capacity planning
+   processes require, among other information, a topological view
+   (domains, nodes, links, network interconnection) of the deployed
+   network.
 
-   Thanks to the definition of the ietf-network model in [RFC8345] this
-   situation has changed, because network operators can use an API with
-   dynamic topological information.  On top of the work in [RFC8345],
-   [RFC8346] and [RFC8944] extends the generic network and network
-   topology data models with topology attributes that are specific to
-   Layer 3 and Layer 2.  However, there is not any model that exposes
-   Open Shortest Path First (OSPF) information.  This information is
-   required in the IP/MPLS planning process to properly assess the
-   required network resources to meet the traffic demands in normal and
-   failure scenarios.
+   This document defines a YANG data model representing an abstracted
+   view of a network topology containing Open Shortest Path First
+   (OSPF).  It covers the topology of IP/MPLS networks running OSPF as
+   Interior Gateway Protocol (IGP) protocol.  The proposed YANG model
+   augments the "A YANG Data Model for Network Topologies" [RFC8345] and
+   "A YANG Data Model for Layer 3 Topologies" [RFC8346] by adding OSPF
+   concepts.  It is worth to highlight that the Yang model can also be
+   used together with [RFC8795] and
+   [I-D.draft-ietf-teas-yang-l3-te-topo] when Traffic engineering
+   characteristics are required in the topological view.
 
-   The main objective of this model is to represent most relevant OSPF
-   topology attributes.
+   This YANG data model can be used to export the OSPF related topology
+   directly from a network controller to Operation Support System (OSS)
+   tools or to a higher level controller.
 
-   This document defines a YANG data model for representing, managing,
-   and controlling the OSPF topology.  The data model augments ietf-
-   network module [RFC8345] by adding the OSPF information.
+   Note that the YANG model is in this document strictly adheres to the
+   concepts (and the YANG module) in "A YANG Data Model for Network
+   Topologies" [RFC8345] and "A YANG Data Model for Layer 3 Topologies"
+   [RFC8346].  While investigating the OSFP topology, some limitations
+   have discovered in [RFC8345], regarding how the digital map can be
+   represented.  Those limitations (and potential improvements) are
+   covered in [I-D.draft-havel-nmop-digital-map].
 
    This document explains the scope and purpose of the OSPF topology
-   model and how the topology and service models fit together.
-
-   The YANG data model defined in this document conforms to the Network
+   model and how the topology and service models fit together.  The YANG
+   data model defined in this document conforms to the Network
    Management Datastore Architecture [RFC8342].
 
 1.1.  Terminology and Notations
@@ -117,6 +122,10 @@ Table of Contents
 
    The terminology for describing YANG data models is found in
    [RFC7950], [RFC8795] and [RFC8346].
+
+   The term Digital Twin, Digital Map, Digital Map Modelling, Digital
+   Map Model, Digital Map Data, and Topology are specified in
+   [I-D.draft-havel-nmop-digital-map].
 
 1.2.  Requirements Language
 
@@ -129,7 +138,7 @@ Table of Contents
 1.3.  Tree Diagram
 
    Authors include a simplified graphical representation of the data
-   model is used in Section 3 of this document.  The meaning of the
+   model specified in Section 4 of this document.  The meaning of the
    symbols in these diagrams is defined in [RFC8340].
 
 1.4.  Prefix in Data Node Names
@@ -152,7 +161,92 @@ Table of Contents
    RFC Editor Note: Please replace XXXX with the RFC number assigned to
    this document.  Please remove this note.
 
-2.  YANG Data Model for OSPF Topology
+2.  Use Cases
+
+   Use cases for this document are the same than explained in
+   [I-D.draft-ogondio-nmop-isis-topology].  Here are included for
+   completeness and discussion.  Future versions may consider removing
+   them.
+
+   This information is required in the IP/MPLS planning process to
+   properly assess the required network resources to meet the traffic
+   demands in normal and failure scenarios.  Network operators perform
+   the capacity planning for their networks and run regular what-if
+   scenarios analysis based on representations of the real network.
+   Those what-if analysis and capacity planning processes require, among
+   other information, a topological view (domains, nodes, links, network
+   interconnection) of the deployed network.
+
+   The standardization of an abstracted view of the OSPF topology model
+   as NorthBound Interface (NBI) of Software Defined Networking (SDN)
+   controllers allows the unified query of the OSFP topology in order to
+   inject this information into third party tools covering specialized
+   cases.
+
+   The OSFP topological model should export enough OSFP information to
+   permit these tools to simulate the IP routing.  By mapping the
+   traffic demand, ideally at the IP flow level, to the topology, we can
+   simulate the traffic growth, evaluating this way its effect on the
+   routing and quality of service.  That is, simulating how IP-level
+   traffic demands would be forwarded, after OSPF convergence is
+   reached, and from there estimating, using appropriate mathematical
+   models, related KPIs like the occupation in the links or end-to-end
+   latencies.
+
+   In summary, the network-wide view of the OSFP topology enables
+   multiple use cases:
+
+   *  Network design: verifying that the actual deployed OSFP network
+      conforms to the planned design.
+
+   *  Capacity planning.  Dimensioning or redesign of the IP
+      infrastructure to satisfy target KPI metrics under existing or
+      forecasted traffic demands.
+
+   *  What-if analysis.  Estimation of the network KPIs in modified
+      network situations.  For instance, failure situations, traffic
+      anomaly situations, addition or deletion of new adjacencies, IGP
+      weight reconfigurations, etc.
+
+   *  Failure analysis.  Systematic and massive test of the network
+      under multiple simulated failure situations, evaluating the
+      network fault tolerance properties, and using mathematical models
+      to derive statistical network availability metrics.
+
+2.1.  Relationship with the OSPF YANG Model
+
+   [RFC9129] specifies a YANG data model that can be used to configure
+   and manage the OSPF protocol on network elements.  This data model
+   covers the configuration of an OSPF routing protocol instance, as
+   well as the retrieval of OSPF operational states.  [RFC9129] is still
+   expected to be used for individual network elements configuration and
+   monitoring.  On the other hand, the proposed YANG model in this
+   document covers the abstracted view of the entire network topology
+   containing OSPF.  As such, this model is aimed at being available via
+   the NBI of an SDN controller.
+
+2.2.  Relationship with Digital Map
+
+   As described in [I-D.draft-havel-nmop-digital-map], the Digital Map
+   provides the core multi-layer topology model and data for the digital
+   twin and connects them to the other digital twin models and data.
+
+   The Digital Map Modelling defines the core topological entities,
+   their role in the network, core properties, and relationships both
+   inside each layer and between the layers.
+
+   The Digital Map Model is a basic topological model that is linked to
+   other functional parts of the digital twin and connects them all:
+   configuration, maintenance, assurance (KPIs, status, health,
+   symptoms), Traffic Engineering (TE), different behaviors and actions,
+   simulation, emulation, mathematical abstractions, AI algorithms, etc.
+
+   As such the IGP topology of the Digital Map (in this case, OSPF) is
+   just one of the layers of the Digital Map, for specific user (the
+   network operator in charge of the IGP) for specific IGP use cases as
+   described before.
+
+3.  YANG Data Model for OSPF Topology
 
    The abstract (base) network data model is defined in the "ietf-
    network" module of [RFC8345].  The OSPF-topology builds on the
@@ -174,6 +268,32 @@ Table of Contents
 
    *  OSPF status: contains the neighbours' information.
 
+   The following figure is based on the Figure 1 from [RFC8346], where
+   the example-ospf-topology is replaced with ietf-l3-ospf-topology and
+   where arrows show how the modules augment each other.
+
+                         +-----------------------------+
+                         |  +-----------------------+  |
+                         |  |      ietf-network     |  |
+                         |  +----------^------------+  |
+                         |             |               |
+                         |  +-----------------------+  |
+                         |  | ietf-network-topology |  |
+                         |  +----------+------------+  |
+                         +-------------^---------------+
+                                       |
+                                       |
+                          +------------^-------------+
+                          | ietf-l3-unicast-topology |
+                          +------------^-------------+
+                                       |
+                                       |
+                           +-----------^-----------+
+                           | ietf-l3-ospf-topology |
+                           +-----------------------+
+
+                  Figure 1: OSPF Topology module structure
+
    A second set of parameters, along with augmentations, is included at
    the link and termination point level.  Each parameter is listed as
    follows:
@@ -186,10 +306,17 @@ Table of Contents
 
    *  Passive mode
 
-3.  OSPF Topology Tree Diagram
+4.  RFC8345 Limitations for the OSPF Modeling
 
-   Figure 1 below shows the tree diagram of the YANG data model defined
-   in module ietf-l3-ospf-topology.yang (Section 4).
+   There are some limitations in the [RFC8345] that are explained in
+   more detail in [I-D.draft-havel-nmop-digital-map].  The current
+   version of the ietf-l3-ospf-topology module is based on the current
+   version of [RFC8345].
+
+5.  OSPF Topology Tree Diagram
+
+   Figure 2 below shows the tree diagram of the YANG data model defined
+   in module ietf-l3-ospf-topology.yang (Section 6).
 
    module: ietf-l3-ospf-topology
      augment /nw:networks/nw:network/nw:network-types:
@@ -216,13 +343,13 @@ Table of Contents
           +--rw metric?           uint64
           +--rw is-passive?       boolean
 
-                    Figure 1: OSPF Topology tree diagram
+                    Figure 2: OSPF Topology tree diagram
 
-4.  YANG Model for OSPF topology
+6.  YANG Model for OSPF topology
 
    Following the YANG model is presented.
 
-   <CODE BEGINS> file "ietf-l3-ospf-topology@2023-10-23.yang"
+   <CODE BEGINS> file "ietf-l3-ospf-topology@2024-06-12.yang"
    module ietf-l3-ospf-topology {
      yang-version 1.1;
      namespace
@@ -242,7 +369,7 @@ Table of Contents
      }
 
      organization
-       "IETF OPSA (Operations and Management Area) Working Group";
+       "IETF NMOP (Network Management Operations) Working Group";
      contact
        "WG Web:  <https://datatracker.ietf.org/wg/opsawg/>
        WG List:  <mailto:opsawg@ietf.org>
@@ -257,7 +384,7 @@ Table of Contents
        "This module defines a model for Layer 3 OSPF
         topologies.
 
-        Copyright (c) 2022 IETF Trust and the persons identified as
+        Copyright (c) 2024 IETF Trust and the persons identified as
         authors of the code.  All rights reserved.
 
         Redistribution and use in source and binary forms, with or
@@ -472,9 +599,9 @@ Table of Contents
    }
    <CODE ENDS>
 
-                    Figure 2: OSPF Topology YANG module
+                    Figure 3: OSPF Topology YANG module
 
-5.  Security Considerations
+7.  Security Considerations
 
    The YANG module specified in this document defines a schema for data
    that is designed to be accessed via network management protocols such
@@ -496,7 +623,7 @@ Table of Contents
    to these data nodes without proper protection can have a negative
    effect on network operations.
 
-6.  IANA Considerations
+8.  IANA Considerations
 
    This document registers the following namespace URIs in the IETF XML
    registry [RFC3688]:
@@ -518,13 +645,24 @@ Table of Contents
    reference:    RFC XXXX
    --------------------------------------------------------------------
 
-7.  Implementation Status
+9.  Implementation Status
 
    This section will be used to track the status of the implementations
    of the model.  It is aimed at being removed if the document becomes
    RFC.
 
-8.  Normative References
+10.  References
+
+10.1.  Normative References
+
+   [I-D.draft-havel-nmop-digital-map]
+              Havel, O., Claise, B., de Dios, O. G., Elhassany, A.,
+              Graf, T., and M. Boucadair, "Modeling the Digital Map
+              based on RFC 8345: Sharing Experience and Perspectives",
+              Work in Progress, Internet-Draft, draft-havel-nmop-
+              digital-map-00, 3 March 2024,
+              <https://datatracker.ietf.org/doc/html/draft-havel-nmop-
+              digital-map-00>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -594,10 +732,29 @@ Table of Contents
               DOI 10.17487/RFC8795, August 2020,
               <https://www.rfc-editor.org/rfc/rfc8795>.
 
-   [RFC8944]  Dong, J., Wei, X., Wu, Q., Boucadair, M., and A. Liu, "A
-              YANG Data Model for Layer 2 Network Topologies", RFC 8944,
-              DOI 10.17487/RFC8944, November 2020,
-              <https://www.rfc-editor.org/rfc/rfc8944>.
+   [RFC9129]  Yeung, D., Qu, Y., Zhang, Z., Chen, I., and A. Lindem,
+              "YANG Data Model for the OSPF Protocol", RFC 9129,
+              DOI 10.17487/RFC9129, October 2022,
+              <https://www.rfc-editor.org/rfc/rfc9129>.
+
+10.2.  Informative References
+
+   [I-D.draft-ietf-teas-yang-l3-te-topo]
+              Liu, X., Bryskin, I., Beeram, V. P., Saad, T., Shah, H.
+              C., and O. G. de Dios, "YANG Data Model for Layer 3 TE
+              Topologies", Work in Progress, Internet-Draft, draft-ietf-
+              teas-yang-l3-te-topo-16, 2 March 2024,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
+              yang-l3-te-topo-16>.
+
+   [I-D.draft-ogondio-nmop-isis-topology]
+              de Dios, O. G., Barguil, S., Lopez, V., Ceccarelli, D.,
+              and B. Claise, "A YANG Data Model for Intermediate System
+              to intermediate System (IS-IS) Topology", Work in
+              Progress, Internet-Draft, draft-ogondio-nmop-isis-
+              topology-00, 4 March 2024,
+              <https://datatracker.ietf.org/doc/html/draft-ogondio-nmop-
+              isis-topology-00>.
 
 Acknowledgments
 
